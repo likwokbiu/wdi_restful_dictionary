@@ -1,1 +1,10 @@
-<p>This is the entries index page</p>
+<H1>Entries</H1>
+
+<p>
+  <%= link_to 'New Entry', new_entry_path %>
+</p>
+
+<% @entries.each do |entry| %>
+  <h2><%= link_to entry.word, entry_path(entry) %></h2>
+  <%= render 'entry', entry: entry %>
+<% end %>
